@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  postgres-db:
+    container_name: inventory_postgres
+    image: "postgres" # use latest official postgres version
+    restart: always
+    environment:
+      POSTGRES_USER: inventory_dev
+      POSTGRES_PASSWORD: inventory_dev
+      POSTGRES_DB: inventory
+    ports:
+      - "5432:5432"
+#    volumes:
+#      - ./postgres-db/data:/var/lib/postgresql/data
